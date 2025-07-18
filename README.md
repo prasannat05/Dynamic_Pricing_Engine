@@ -16,10 +16,10 @@
 
 ## 📁 Project Structure
 
-dynamic-price-prediction/
-├── system.py
-├── style.css
-├── templates/
-│ ├── index.html
-│ ├── result.html
-│ └── docs.html
+-dynamic-price-prediction/
+-├── system.py
+-├── style.css
+-├── templates/
+-│ ├── index.html
+-│ ├── result.html
+-│ └── docs.html
