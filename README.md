@@ -22,8 +22,8 @@
 
 ---
 ## 📸 Screenshot
-
-![Prediction Result Page](Screenshots/input)
+![User input Page](Screenshots/input_page.png)
+![Prediction Result Page](Screenshots/result_page.png)
 
 ## ⚙️ Installation
 
