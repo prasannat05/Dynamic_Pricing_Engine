@@ -23,7 +23,7 @@
 ---
 ## 📸 Screenshot
 
-![Prediction Result Page](Screenshots/login.png)
+![Prediction Result Page](Screenshots/input)
 
 ## ⚙️ Installation
 
