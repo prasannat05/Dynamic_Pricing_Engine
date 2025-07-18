@@ -16,13 +16,9 @@
 
 ## 📁 Project Structure
 
-dynamic-price-prediction/
-├── system.py # 🧠 Main backend Flask application
-├── style.css # 🎨 CSS styling for frontend UI
-├── templates/ # 📄 HTML templates for rendering pages
-│ ├── index.html # 🔧 Input page (user form)
-│ ├── result.html # 📊 Result page with predicted price
-│ └── docs.html # 📝 Additional documentation or help page
-
-C
-
+- `system.py` – 🧠 Main backend Flask application  
+- `style.css` – 🎨 CSS styling for frontend UI  
+- `templates/` – 📄 HTML templates for rendering pages  
+  - `index.html` – 🔧 Input page (user form)  
+  - `result.html` – 📊 Result page with predicted price  
+  - `docs.html` – 📝 Additional documentation or help page  
