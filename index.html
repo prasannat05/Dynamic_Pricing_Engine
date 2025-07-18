@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PricePro - Product Pricing Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #6b7280;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      height: 60px;
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+    }
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 1.2px;
+      color: #111827;
+      user-select: none;
+    }
+    nav ul.nav-list {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul.nav-list li a.nav-link {
+      font-weight: 600;
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.25s ease;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+    }
+    nav ul.nav-list li a.nav-link:hover,
+    nav ul.nav-list li a.nav-link:focus {
+      color: #111827;
+      border-bottom-color: #111827;
+      outline: none;
+    }
+    nav ul.nav-list li a.nav-link.active {
+      color: #111827;
+      border-bottom-color: #111827;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 4rem 0 6rem;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      background: linear-gradient(90deg, #000 0%, #333 100%); /* Changed to black gradient */
+      color: white;
+      border-radius: 0.75rem;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .hero-section h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.1;
+    }
+    .hero-section p.subtext {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0;
+    }
+
+    .form-section {
+      background: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      padding: 2.5rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    form label {
+      display: block;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 0.4rem;
+      font-size: 18px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 18px;
+      border-radius: 0.75rem;
+      border: 1px solid #d1d5db;
+      color: #111827;
+      transition: border-color 0.3s ease;
+      margin-bottom: 1.5rem;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+    }
+    button.primary-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 0.75rem 0;
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 2rem;
+      background-color: #000; /* Changed to black */
+      border: 2px solid #000; /* Changed to black */
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      user-select: none;
+    }
+    button.primary-btn:disabled {
+      background-color: #555; /* Dark gray for disabled state */
+      border-color: #555; /* Dark gray for disabled state */
+      cursor: not-allowed;
+    }
+    button.primary-btn:not(:disabled):hover {
+      background-color: #333; /* Darker shade of black on hover */
+      border-color: #333; /* Darker shade of black on hover */
+    }
+    .subtext-small {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-left: 0.25rem;
+    }
+
+    /* Custom styles for file input */
+    .file-input {
+      display: none; /* Hide the default file input */
+    }
+    .file-label {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 1rem;
+      background-color: #000; /* Black background */
+      color: white; /* White text */
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-align: center;
+      border: 2px solid #000; /* Black border */
+    }
+    .file-label:hover {
+      background-color: #333; /* Darker shade on hover */
+    }
+    .file-name {
+      margin-top: 0.5rem;
+      font-size: 16px;
+      color: #111827; /* Color for the file name display */
+    }
+  </style>
+</head>
+<body>
+  <header class="top-nav" role="banner">
+    <div class="nav-container container">
+      <div class="logo" aria-label="PricePro Logo">PricePro</div>
+      <nav role="navigation" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="/docs" class="nav-link">Docs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero-section">
+      <h1 id="hero-title">Smart Price Suggestion</h1>
+      <p class="subtext">Get data-driven pricing suggestions tailored for your products.</p>
+    </section>
+
+    <section class="form-section container">
+      {% if error %}
+      <div style="background-color: #fee2e2; color: #b91c1c; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+        <strong>Error:</strong> {{ error }}
+      </div>
+      {% endif %}
+
+      <!-- ✅ Add enctype for file upload -->
+      <form method="POST" enctype="multipart/form-data" novalidate>
+        <label for="product_name">Product Name:</label>
+        <input id="product_name" type="text" name="product_name" required
+               placeholder="Start typing product name"
+               value="{{ product_name | default('') }}"
+               autocomplete="off" />
+      
+        <label for="cost_price">Cost Price (INR):</label>
+        <input id="cost_price" type="number" name="cost_price" required min="0"
+               placeholder="Enter cost price"
+               value="{{ cost_price | default('') }}" />
+      
+        <label for="age_days">Stock Age (in days):</label>
+        <input id="age_days" type="number" name="age_days" required min="0"
+               placeholder="Enter stock age"
+               value="{{ age_days | default('') }}" />
+      
+        <label for="stock_quantity">Stock Quantity:</label>
+        <input id="stock_quantity" type="number" name="stock_quantity" required min="0"
+               placeholder="Enter stock quantity"
+               value="{{ stock_quantity | default('') }}" />
+      
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+          {% if categories %}
+            <option value="" disabled>Select a category</option>
+            {% for cat in categories %}
+              <option value="{{ cat[1] }}" {% if selected_category == cat[1] %}selected{% endif %}>
+                {{ cat[0] }}
+              </option>
+            {% endfor %}
+          {% else %}
+            <option value="" disabled selected>Type product name to load categories...</option>
+          {% endif %}
+        </select>
+      
+        {% if trends_failed %}
+          <label for="trend_csv">Upload Trend CSV (Required due to Trends failure):</label>
+          <label class="file-label" for="trend_csv">Choose File</label>
+          <input id="trend_csv" type="file" name="trend_csv" accept=".csv" required class="file-input" onchange="updateFileName()" />
+          <p class="file-name" id="file-name">No file chosen</p>
+          <p class="subtext-small">Google Trends failed. Upload a CSV with 30 recent trend values (one column).</p>
+        {% else %}
+          <p class="subtext-small">Trend CSV is optional — required only if Google Trends fails.</p>
+        {% endif %}
+      
+        <button type="submit" class="primary-btn" disabled id="submit-btn">Get Suggested Price</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    function updateFileName() {
+      const fileInput = document.getElementById('trend_csv');
+      const fileNameDisplay = document.getElementById('file-name');
+      if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = fileInput.files[0].name; // Display the selected file name
+      } else {
+        fileNameDisplay.textContent = 'No file chosen'; // Default text if no file is selected
+      }
+    }
+
+    (() => {
+      const productInput = document.getElementById('product_name');
+      const categorySelect = document.getElementById('category');
+      const submitBtn = document.getElementById('submit-btn');
+      let debounceTimeout = null;
+
+      function clearCategories() {
+        categorySelect.innerHTML = '<option value="" disabled selected>Type product name to load categories...</option>';
+        submitBtn.disabled = true;
+      }
+
+      function evaluateSubmitEnabled() {
+        const categoryVal = categorySelect.value;
+        const costPrice = document.getElementById('cost_price').value;
+        const ageDays = document.getElementById('age_days').value;
+        const stockQty = document.getElementById('stock_quantity').value;
+        submitBtn.disabled = !(categoryVal && costPrice && ageDays && stockQty);
+      }
+
+      async function fetchCategories(product) {
+        if (!product.trim()) {
+          clearCategories();
+          return;
+        }
+        try {
+          const response = await fetch(`/api/categories?product=${encodeURIComponent(product)}`);
+          if (!response.ok) {
+            clearCategories();
+            return;
+          }
+          const data = await response.json();
+          if (data.length === 0) {
+            categorySelect.innerHTML = '<option value="" disabled selected>No categories found</option>';
+            submitBtn.disabled = true;
+            return;
+          }
+          categorySelect.innerHTML = '<option value="" disabled selected>Select a category</option>';
+          data.forEach(cat => {
+            const opt = document.createElement('option');
+            opt.value = cat.url;
+            opt.textContent = cat.name;
+            categorySelect.appendChild(opt);
+          });
+          submitBtn.disabled = true;
+        } catch (error) {
+          clearCategories();
+          console.error('Category fetch failed', error);
+        }
+      }
+
+      productInput.addEventListener('input', () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+          fetchCategories(productInput.value);
+        }, 700);
+      });
+
+      categorySelect.addEventListener('change', evaluateSubmitEnabled);
+      ['cost_price', 'age_days', 'stock_quantity'].forEach(id => {
+        document.getElementById(id).addEventListener('input', evaluateSubmitEnabled);
+      });
+
+      clearCategories();
+      evaluateSubmitEnabled();
+    })();
+  </script>
+</body>
+</html>

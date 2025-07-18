@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>PricePro Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+          Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background: #fff;
+        color: #6b7280;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 900px;
+        margin: 2rem auto 4rem;
+        padding: 0 1rem;
+      }
+      header.top-nav {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        z-index: 1000;
+      }
+      .nav-container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 1.2px;
+        color: #111827;
+        user-select: none;
+      }
+      nav ul.nav-list {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul.nav-list li a.nav-link {
+        font-weight: 600;
+        color: #6b7280;
+        text-decoration: none;
+        transition: color 0.25s ease;
+        padding: 0.25rem 0;
+        border-bottom: 2px solid transparent;
+      }
+      nav ul.nav-list li a.nav-link:hover,
+      nav ul.nav-list li a.nav-link:focus {
+        color: #111827;
+        border-bottom-color: #111827;
+        outline: none;
+      }
+      nav ul.nav-list li a.nav-link.active {
+        color: #111827;
+        border-bottom-color: #111827;
+        font-weight: 700;
+      }
+      main h1 {
+        font-size: 48px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      section.documentation-section {
+        background: #fff;
+        padding: 2rem 3rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      }
+      h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #111827;
+      }
+      p, li {
+        font-size: 18px;
+        color: #6b7280;
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      ol {
+        padding-left: 1.25rem;
+      }
+    </style>
+</head>
+<body>
+  <header class="top-nav" role="banner">
+    <div class="nav-container container">
+      <div class="logo" aria-label="PricePro Logo">PricePro</div>
+      <nav role="navigation" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/docs" class="nav-link active">Docs</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <section class="documentation-section" aria-label="Documentation content">
+      <h1>PricePro Documentation</h1>
+      <p>Welcome to the PricePro documentation page. This page provides detailed information about how the system works, its features, and how to use it effectively.</p>
+
+      <h2>System Overview</h2>
+      <p>PricePro is a smart price suggestion tool designed to help you determine the optimal price for your products. It takes into account various factors such as cost price, stock age, stock quantity, competitor prices, and market trends to provide a data-driven pricing suggestion.</p>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Competitor Analysis:</strong> Scrapes data from Amazon to analyze competitor prices, ratings, review counts, and monthly sales.</li>
+        <li><strong>Trend Analysis:</strong> Uses Google Trends to determine the current market trend for the product.</li>
+        <li><strong>Price Adjustment:</strong> Adjusts the base price based on trend, stock, and age factors.</li>
+        <li><strong>Model Accuracy:</strong> Provides RMSE and MAE metrics to evaluate the accuracy of the pricing model.</li>
+      </ul>
+
+      <h2>How to Use</h2>
+      <ol>
+        <li>Enter the product name, cost price, stock age, and stock quantity in the form on the home page.</li>
+        <li>Select a category from the dropdown menu.</li>
+        <li>Click the "Get Suggested Price" button.</li>
+        <li>Review the suggested pricing details, competitor data, and trend analysis on the results page.</li>
+      </ol>
+
+      <h2>Pricing Model</h2>
+      <p>The pricing model uses an XGBoost Regressor to predict the base price based on competitor data and market trends. The base price is then adjusted based on the following factors:</p>
+      <ul>
+        <li><strong>Trend Adjustment:</strong> Increases or decreases the price based on the current market trend.</li>
+        <li><strong>Stock Adjustment:</strong> Decreases the price if the stock quantity is high and increases it if the stock quantity is low.</li>
+        <li><strong>Age Adjustment:</strong> Decreases the price if the stock age is high.</li>
+      </ul>
+
+      <h2>Metrics</h2>
+      <ul>
+        <li><strong>RMSE (Root Mean Squared Error):</strong> Measures the average magnitude of the errors between predicted and actual prices.</li>
+        <li><strong>MAE (Mean Absolute Error):</strong> Measures the average absolute difference between predicted and actual prices.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
