@@ -21,6 +21,9 @@
 - **HTML, CSS** – For frontend design and interaction.
 
 ---
+## 📸 Screenshot
+
+![Prediction Result Page](Screenshots/login.png)
 
 ## ⚙️ Installation
 
