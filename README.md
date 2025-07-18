@@ -1,26 +1,47 @@
 # 🔧 Dynamic Price Prediction
 
-## 📌 Key Features
+## ✨ Features
 
-🧠 Dynamic Price Prediction System helps Amazon sellers set smart, profitable prices.  
-🛒 Scrapes live competitor data (price, ratings, reviews) from Amazon.  
-📈 Uses Google Trends to analyze and forecast product demand.  
-🤖 Predicts base price using XGBoost based on product features.  
-📊 ARIMA forecasts future demand to refine pricing strategy.  
-⚙️ Applies heuristics for stock levels and product age adjustments.  
-💰 Ensures prices stay above cost while maximizing profit.  
-🌐 Built with Python, Flask, BeautifulSoup, XGBoost, ARIMA, PyTrends.  
-🚀 Future scope: LSTM/Prophet models, seasonal pricing, and user dashboard.  
+- Predicts optimal product prices using machine learning.
+- Scrapes competitor data like price, ratings, and reviews from Amazon.
+- Forecasts product demand using Google Trends.
+- Combines XGBoost and ARIMA for accurate predictions.
+- Uses heuristic rules (stock, age, margin) to fine-tune final prices.
+- Clean, user-friendly UI built with Flask and HTML templates.
 
 ---
 
-## 📁 Project Structure
+## 🛠 Tech Stack
 
-dynamic-price-prediction/.
-- ├── system.py # 🧠 Main backend Flask application.
-- ├── style.css # 🎨 CSS styling for frontend UI.
-- ├── requirements.txt 📄Requirements Needed.
-- ├── templates/ # 📄 HTML templates for rendering pages.
-- │ ├── index.html # 🔧 Input page (user form).
-- │ ├── result.html # 📊 Result page with predicted price.
-- │ └── docs.html # 📝 Additional documentation or help page.
+- **Python & Flask** – For backend development and web server.
+- **XGBoost** – For machine learning-based base price prediction.
+- **ARIMA (statsmodels)** – For time-series demand forecasting.
+- **BeautifulSoup & Requests** – For scraping data from Amazon.
+- **PyTrends** – Google Trends integration for demand score.
+- **HTML, CSS** – For frontend design and interaction.
+
+---
+
+## ⚙️ Installation
+
+To get started with the project, follow these steps:
+
+```
+git clone https://github.com/your-username/dynamic-price-prediction.git
+cd dynamic-price-prediction
+pip install -r requirements.txt
+python system.py
+```
+
+
+Project Structure
+```
+└── dynamic-price-prediction/
+    ├── system.py               # Main Flask backend logic
+    ├── style.css               # Styling for the frontend
+    ├── requirements.txt        # Project dependencies
+    └── templates/
+        ├── index.html          # Input form page
+        ├── result.html         # Price prediction result page
+        └── docs.html           # Help or documentation page
+
