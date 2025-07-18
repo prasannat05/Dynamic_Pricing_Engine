@@ -1,6 +1,6 @@
 # 🔧 Dynamic Price Prediction
 
-## 📌 Key Features:
+## 📌 Key Features
 
 🧠 Dynamic Price Prediction System helps Amazon sellers set smart, profitable prices.  
 🛒 Scrapes live competitor data (price, ratings, reviews) from Amazon.  
@@ -16,10 +16,11 @@
 
 ## 📁 Project Structure
 
-- dynamic-price-prediction/
-- ├── system.py
-- ├── style.css
-- ├── templates/
-- │ ├── index.html
-- │ ├── result.html
-- │ └── docs.html
+dynamic-price-prediction/.
+- ├── system.py # 🧠 Main backend Flask application.
+- ├── style.css # 🎨 CSS styling for frontend UI.
+- ├── requirements.txt 📄Requirements Needed.
+- ├── templates/ # 📄 HTML templates for rendering pages.
+- │ ├── index.html # 🔧 Input page (user form).
+- │ ├── result.html # 📊 Result page with predicted price.
+- │ └── docs.html # 📝 Additional documentation or help page.
