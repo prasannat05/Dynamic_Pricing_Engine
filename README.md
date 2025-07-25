@@ -1,6 +1,6 @@
-# 🔧 Dynamic Price Prediction
+# Dynamic Price Prediction
 
-## ✨ Features
+## Features
 
 - Predicts optimal product prices using machine learning.
 - Scrapes competitor data like price, ratings, and reviews from Amazon.
@@ -11,7 +11,7 @@
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Python & Flask** – For backend development and web server.
 - **XGBoost** – For machine learning-based base price prediction.
@@ -21,11 +21,11 @@
 - **HTML, CSS** – For frontend design and interaction.
 
 ---
-## 📸 Screenshot
+## Screenshot
 ![User input Page](Screenshots/input_page.png)
 ![Prediction Result Page](Screenshots/result_page.png)
 
-## ⚙️ Installation
+## nstallation
 
 To get started with the project, follow these steps:
 
