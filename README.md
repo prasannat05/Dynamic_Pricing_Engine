@@ -25,7 +25,7 @@
 ![User input Page](Screenshots/input_page.png)
 ![Prediction Result Page](Screenshots/result_page.png)
 
-## nstallation
+## Installation
 
 To get started with the project, follow these steps:
 
